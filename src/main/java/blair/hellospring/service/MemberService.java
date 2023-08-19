@@ -2,13 +2,19 @@ package blair.hellospring.service;
 
 import blair.hellospring.domain.Member;
 import blair.hellospring.repository.MemberRepository;
-import blair.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    // 💛class Test 생성 단축키(⭐️⭐️⭐️⭐️⭐) -> command + shift + t
+    private final MemberRepository memberRepository;
+
+    // memberRepository를 new로 생성하는 것이 아니라 외부에서 넣어주도록 아래와같이 코드 수정
+    // 의존성 주입 (Dependency Injection⭐️⭐️⭐️⭐️⭐️)
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /**
      * 회원 가입
