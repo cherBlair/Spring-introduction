@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class MemberService {
     // 💛class Test 생성 단축키(⭐️⭐️⭐️⭐️⭐) -> command + shift + t
     private final MemberRepository memberRepository;
 
     // memberRepository를 new로 생성하는 것이 아니라 외부에서 넣어주도록 아래와같이 코드 수정
     // 의존성 주입 (Dependency Injection⭐️⭐️⭐️⭐️⭐️)
-    @Autowired
+    //@Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
