@@ -4,7 +4,7 @@ import blair.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-//@Controller
+@Controller
 // @Controller
 // 스프링이 뜰 때 MemberController로 객체를 생성해서 가지고 있음
 // = 스프링 컨테이너에서 스프링 빈이 관리된다!
