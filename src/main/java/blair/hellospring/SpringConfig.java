@@ -1,6 +1,7 @@
 package blair.hellospring;
 
 import blair.hellospring.repository.JdbcMemberRepository;
+import blair.hellospring.repository.JdbcTemplateMemberRepository;
 import blair.hellospring.repository.MemberRepository;
 import blair.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class SpringConfig {
     public MemberRepository memberRepository() {
 
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        //return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
