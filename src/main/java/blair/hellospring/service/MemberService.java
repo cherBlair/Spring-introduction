@@ -4,11 +4,13 @@ import blair.hellospring.domain.Member;
 import blair.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+@Transactional
 public class MemberService {
     // 💛class Test 생성 단축키(⭐️⭐️⭐️⭐️⭐) -> command + shift + t
     private final MemberRepository memberRepository;
