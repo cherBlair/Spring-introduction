@@ -39,16 +39,32 @@ public class MemberService {
 
         // -> 위 코드를 또 한 번 리팩토링
         // -> 단축키 control + t -> 메소드로 빼주기 💛-> method 검색 -> extract method 선택
-        validateDuplicatedMember(member); // 중복 회원 검증
-        memberRepository.save(member);
-        return member.getId();
+
+        long start = System.currentTimeMillis();
+
+        try {
+            validateDuplicatedMember(member); // 중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join " + timeMs + "ms");
+        }
     }
 
     /**
      *전체 회원 조회
      */
     public List<Member> findMembers() {
-        return memberRepository.findAll();
+        long start = System.currentTimeMillis();
+        try {
+            return memberRepository.findAll();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("findMembers " + timeMs + "ms");
+        }
     }
 
     public Optional<Member> findOne(Long memberId) {
