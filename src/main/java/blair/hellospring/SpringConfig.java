@@ -1,5 +1,6 @@
 package blair.hellospring;
 
+import blair.hellospring.aop.TimeTraceAop;
 import blair.hellospring.repository.MemberRepository;
 import blair.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,11 @@ public class SpringConfig {
     }
 
 //    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
+
+//    @Bean
 //    public MemberRepository memberRepository() {
 //
 //        //return new MemoryMemberRepository();
@@ -39,4 +45,6 @@ public class SpringConfig {
 ////        return new JpaMemberRepository(em);
 //
 //    }
+
+
 }
